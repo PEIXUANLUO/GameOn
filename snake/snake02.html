@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./snake02.js" defer></script>
+    <title>Classic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+        <style>
+        * {
+            padding: 0;
+            margin: 0;
+            /* box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden; */
+        }
+
+        /* body {
+            overflow-x: hidden;
+        } */
+        
+            .hero {
+                height: 100%;
+                width: 100%;
+                /* min-height: 80vh; */
+                background: linear-gradient(180deg, rgba(49, 30, 30, 0.75) 0%, rgba(238, 153, 153, 0.801) 73.96%, #afa3a3 100%);
+                position: absolute;
+    
+            }
+    
+            .maim-width {
+                width: 1400px;
+                max-width: 75%;
+                margin: 0 auto;
+            }
+    
+            .hero header .logo h2 a {
+                display: block;
+                font-size: 32px;
+                font-weight: 600;
+                text-decoration: none;
+                color: rgb(0, 0, 0);
+                font-family: 'Permanent Marker', cursive;
+                font-family: 'Press Start 2P', cursive;
+            }
+    
+            .hero header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 40px 0 30px;
+            }
+    
+            nav ul li {
+                list-style: none;
+                display: inline-block;
+            }
+    
+            nav ul li a {
+                text-decoration: none;
+                color: rgb(0, 0, 0);
+                margin-left: 60px;
+                font-size: 15px;
+                font-weight: 600;
+                border-bottom: 2px solid transparent;
+                transition: .2s;
+                font-family: 'Permanent Marker', cursive;
+                font-family: 'Press Start 2P', cursive;
+            }
+    
+            nav ul li:not(:last-child) a:hover,
+            nav ul li:not(:last-child) a:focus {
+                border-bottom: 2px solid rgb(0, 0, 0);
+            }
+    
+            .dropdown {
+                position: relative;
+                display: inline-block;
+    
+            }
+    
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #ffffff;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                border-radius: 15px;
+    
+            }
+    
+            .dropdown-content a {
+                color: rgb(0, 0, 0);
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                font-family: 'Permanent Marker', cursive;
+                font-family: 'Press Start 2P', cursive;
+    
+            }
+    
+            .dropdown-content a:hover {
+                background-color: rgb(127, 152, 125);
+                border-radius: 15px;
+    
+            }
+    
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+    
+            nav ul li.btn a {
+                background: transparent;
+                color: rgb(0, 0, 0);
+                border: 5px solid #000000;
+                padding: 9px 20px;
+                border-radius: 30px;
+                line-height: 1.4;
+                font-size: 14px;
+                font-weight: 500;
+                margin-left: 150px;
+            }
+    
+            nav ul li.btn:hover a {
+                border: 1px solid rgb(0, 0, 0);
+                color: black;
+                background: white;
+                transition: .4s;
+            }
+    
+    
+            .name {
+                font-size: 75px;
+                color: black;
+                font-family: 'Permanent Marker', cursive;
+                font-family: 'Press Start 2P', cursive;
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding: 0px;
+                letter-spacing: 50px;
+    
+            }
+    
+            .game_board {
+                text-align: center;
+                font-size: 24px;
+                padding: 0px;
+    
+    
+            }
+    
+            #score_id {
+                font-family: 'Press Start 2P', cursive;
+                font-size: 24px;
+                padding-top: 5px;
+                margin-bottom: 5px;
+            }
+    
+            .遊戲開始 {
+                font-family: 'Press Start 2P', cursive;
+                font-size: 24px;
+                background: rgb(170, 170, 170);
+                border-radius: 15px;
+                border: 5px solid rgb(52, 52, 52);
+            }
+    
+            .level {
+                width: 100%;
+                text-align: center;
+                font-size: 24px;
+                padding: 50px;
+                margin: 10px;
+                margin-bottom: 15px;
+            }
+    
+            .level {
+                list-style: none;
+                display: inline-block;
+    
+            }
+        </style>
+    
+    </head>
+    
+    <body>
+        <section class="hero">
+            <div class="maim-width">
+                <header>
+                    <div class="logo">
+                        <h2><a href="../index.html">GameOn</a></h2>
+                    </div>
+                    <nav>
+                        <ul>
+                            <div class="dropdown">
+                                <li><a href="#">Games</a></li>
+                                <div class="dropdown-content">
+                                    <a href="./mario/newMario.html">Mario</a>
+                                    <a href="./snake/indexsnakedemo.html">Snake</a>
+                                    <a href="#">Tetris</a>
+                                </div>
+                            </div>
+                            <li><a href="#">Reviews</a></li>
+                            <li><a href="#">Faq</a></li>
+                            <li class="btn"><a href="#">Download</a></li>
+                        </ul>
+                    </nav>
+                </header>
+    
+                <div class="name">
+                    SNAKE
+                </div>
+    
+                <div class="game_board">
+                    <input type="button" value="STAR" onclick="gameStart()" class="遊戲開始" style="width:150px;height:50px;">
+                    <h1 id="score_id">0</h1>
+                    <canvas width="576" height="576" id="canvas_id"></canvas>
+                </div>
+    
+                <div class="level">
+                    <a href="./snake01.html"><input type="button" value="Retrogaming" class="遊戲開始"
+                            style="width:350px;height:50px;" src="./snake01.html"></a>
+                    <a href="./snake02.html"><input type="button" value="Classic" class="遊戲開始"
+                            style="width:350px;height:50px;"></a>
+                    <a href="./snake03.html"><input type="button" value="Battle" class="遊戲開始"
+                            style="width:350px;height:50px;"></a>
+    
+                </div>
+    
+            </div>
+    
+        </section>
+    
+    
+    
+    </body>
+
+</html>

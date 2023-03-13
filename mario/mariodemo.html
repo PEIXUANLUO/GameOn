@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./newMario.css">
+    <!-- defer  -->
+    <script src="./newMario.js" defer></script>
+    <title>Mario Jumpdemo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .game-board {
+            width: 100%;
+            /* height: 800px; */
+            border-bottom: 15px solid rgb(35, 160, 35);
+            margin: 0 auto;
+            position: relative;
+            overflow: visible;
+            background: linear-gradient(#87CEEB, #E0F6FF);
+        }
+
+
+
+        .game-board header .logo h2 a {
+            display: block;
+            font-size: 32px;
+            font-weight: 600;
+            text-decoration: none;
+            color: white;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .game-board header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 0 30px;
+            margin: 50px;
+        }
+
+        nav ul li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            margin-left: 60px;
+            font-size: 15px;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: .2s;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        nav ul li:not(:last-child) a:hover,
+        nav ul li:not(:last-child) a:focus {
+            border-bottom: 2px solid white;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 15px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+
+        }
+
+        .dropdown-content a:hover {
+            background-color: pink;
+            border-radius: 15px;
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        nav ul li.btn a {
+            background: transparent;
+            color: white;
+            border: 1px solid #f5dca8;
+            padding: 9px 20px;
+            border-radius: 30px;
+            line-height: 1.4;
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 150px;
+        }
+
+        nav ul li.btn:hover a {
+            border: 1px solid white;
+            color: black;
+            background: white;
+            transition: .4s;
+        }
+
+        .timeclass {
+            position: absolute;
+            color: white;
+            font-size: 30px;
+            /* font-family: 'Permanent Marker', cursive; */
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+            left: 100px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+
+        .time {
+            margin: 35px;
+        }
+
+
+        .pipe {
+            position: absolute;
+            bottom: 0;
+            width: 80px;
+            /* left: 200px; */
+            /* animation: pipe-animation 2s infinite linear; */
+        }
+
+        .brick {
+            width: 100%;
+            position: absolute;
+            bottom: -160px;
+        }
+
+        .mario {
+            width: 150 px;
+            position: absolute;
+            bottom: 0px;
+        }
+
+        .jump {
+            animation: jump 500ms linear;
+        }
+
+        .clouds {
+            position: absolute;
+            width: 500px;
+            height: 250px;
+            animation: clouds-animation 20s infinite linear;
+        }
+
+
+        @keyframes pipe-animation {
+            from {
+                right: -80px;
+            }
+
+            to {
+                right: 100%;
+            }
+        }
+
+        /* 
+@keyframes jump {
+
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 190px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+} */
+
+        @keyframes clouds-animation {
+            from {
+                right: -500px;
+            }
+
+            to {
+                right: 100%;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="game-board">
+        <header>
+            <div class="logo">
+                <h2><a href="../index.html">GameOn</a></h2>
+            </div>
+            <nav>
+                <ul>
+                    <div class="dropdown">
+                        <li><a href="#">Games</a></li>
+                        <div class="dropdown-content">
+                            <a href="./mario/newMario.html">Mario</a>
+                            <a href="../snake/indexsnakedemo.html">Snake</a>
+                            <a href="#">Tetris</a>
+                        </div>
+                    </div>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Faq</a></li>
+                    <li class="btn"><a href="#">Download</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="timeclass">
+            <div class="timename">
+                TIME
+                <div id="timer">0</div>
+            </div>
+        </div>
+        <img src="./img/clouds.png" class="clouds">
+        <img src="./img/mario.gif" class="mario">
+        <img src="./img/pipe.png" class="pipe">
+        <img src="../img/newbrickmario.png" class="brick">
+        <img src="../img/newbrickmario.png" class="brick">
+
+    </div>
+</body>
+
+</html>

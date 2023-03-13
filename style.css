@@ -1,0 +1,226 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.maim-width {
+    width: 1400px;
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: radial-gradient(#2b4a74, 20%, #1b1b1b);
+    position: relative;
+}
+
+.hero header .logo h2 a {
+    display: block;
+    font-size: 32px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+}
+
+.hero header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0 80px;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: .2s;
+}
+
+nav ul li:not(:last-child) a:hover,
+nav ul li:not(:last-child) a:focus {
+    border-bottom: 2px solid white;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 15px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(185, 189, 206);
+    border-radius: 15px;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li.btn a {
+    background: transparent;
+    color: white;
+    border: 3px solid rgb(185, 189, 206);
+    padding: 9px 20px;
+    border-radius: 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 150px;
+}
+
+nav ul li.btn:hover a {
+    border: 3px solid white;
+    color: black;
+    background: white;
+    transition: .4s;
+}
+
+
+.content {
+    padding-top: 150px;
+}
+
+.content .main-text {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 50px;
+}
+
+.content .main-text h6 {
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 40px;
+    margin-top: 100px;
+}
+
+.content .main-text h1 {
+    font-size: 60px;
+    line-height: 1;
+    color: white;
+    margin: 0px 0px 45px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.content .main-text p {
+    max-width: 100%;
+    width: 480px;
+    color: white;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+.content .main-text a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background: white;
+    border: 1px solid white;
+    padding: 9px 25px;
+    line-height: 1.4;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.content .main-text a:hover {
+    transform: scale(1.2);
+    border: 1px solid rgb(185, 189, 206);
+    background: transparent;
+    color: white;
+    transition: .4s;
+}
+
+.content .main-text a.cta {
+    border: 3px solid rgb(185, 189, 206);
+    color: white;
+    background: transparent;
+    margin-left: 20px;
+}
+
+.content .main-text a.cta:hover {
+    color: black;
+    background: white;
+    border: 3px solid white;
+    transition: .4s;
+}
+
+.content .social {
+    position: relative;
+    z-index: 2;
+    margin-top: 150px;
+    padding-bottom: 40px;
+}
+
+.content .social a {
+    display: inline-block;
+    color: rgb(185, 189, 206);
+    margin-right: 25px;
+    font-size: 24px;
+}
+
+.content .social a:hover {
+    transform: scale(1.8);
+    transition: .4s;
+    color: white;
+}
+
+/* 單張圖片 */
+.image {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 90%;
+    bottom: 0;
+    right: 100px;
+    text-align: right;
+}
+
+.img {
+    height: 600px;
+    padding: 150px 250px 0 0;
+    /* display: block; */
+}
+
+/* .image:hover {
+    height: 1000px;
+    padding: 150px 250px 0 0;
+
+} */
